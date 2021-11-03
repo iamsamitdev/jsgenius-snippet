@@ -1,0 +1,45 @@
+{
+    "React Arrow Function": {
+		"prefix": "myreact.arrow",
+		"body": [
+			"import React from 'react'",
+			"import PropTypes from 'prop-types'",
+			"",
+			"const $1 = (props) => {",
+			"  return <div>$0</div>",
+			"}",
+			"",
+			"$1.propTypes = {}",
+			"",
+			"export default $1"
+		],
+		"description": "React Arrow Function"
+	},
+
+    "Revoke Liff": {
+		"prefix": "liff.revoke",
+		"body": [
+			"url:\"https://api.line.me/oauth2/v2.1/revoke\",",
+			"headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},",
+			"form: {",
+			"\taccess_token: `\\${accessToken}`,",
+			"\tclient_id: CHANNEL_ID,",
+			"\tclinet_secret: CHANNEL_SECRET",
+			"}"
+		],
+		"description": "Revoke Access Token"
+	},
+
+
+    "Add Liff": {
+		"prefix": "liff.add",
+		"body": [
+			"form: {",
+			"\taccess_token: `\\${accessToken}`,",
+			"\tclient_id: CHANNEL_ID,",
+			"\tclinet_secret: CHANNEL_SECRET",
+			"}"
+		],
+		"description": "Add Liff Token"
+	},
+}
