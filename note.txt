@@ -1,0 +1,106 @@
+สร้าง Extension และเผยแพร่ใน VSCode
+============================
+1. ติดตั้ง Node.js 14.x+ และ git 2.2x+
+2. ติดตั้ง Package Yeoman และ generator-code
+---
+npm install -g yo generator-code
+
+3. เริ่มสร้าง extension ด้วย yo
+--
+yo code
+
+What type of extension do you want to create?
+> New Code Snippets
+
+Folder name for import or none for new:()
+> Enter
+
+What's the name of your extension? ()
+> jsgenius
+
+What's the identifier of your extension? (jsgenius)
+> Enter
+
+What's the description of your extension? ()
+> Javascript for every one to developer
+
+? Language id: javascript
+
+? Initialize a git repository? (Y/n) Y
+
+? Do you want to open the new folder with Visual Studio Code? (Use arrow keys)
+
+> Open with `code`
+
+4. เขียน Snippet ในไฟล์ snippets.code-snippets
+---
+{
+"Add Liff": {
+		"prefix": "liff.add",
+		"body": [
+			"form: {",
+			"\taccess_token: `\\${accessToken}`,",
+			"\tclient_id: CHANNEL_ID,",
+			"\tclinet_secret: CHANNEL_SECRET",
+			"}"
+		],
+		"description": "Add Liff Token"
+	},
+}
+
+5. Config ไฟล์ package.json
+---
+"version": "1.0.0",
+"license": "SEE LICENSE IN LICENSE.txt",
+"publisher": "ITGeniusEngineering",
+"icon": "images/icon.png",
+"repository": {
+        "type": "git",
+        "url": "https://github.com/iamsamitdev/jsgenius-snippet.git"
+}
+
+6. สร้างไฟล์ LICENSE.txt
+---
+Demo JavaScript License
+
+7. แก้ไขไฟล์ README.md
+---
+JSGenius README
+
+8. เข้าไปที่ dev.azure.com เพื่อสร้าง publisher
+---
+https://dev.azure.com
+
+เข้าไปที่ลิงก์
+https://marketplace.visualstudio.com/manage/
+
+9. ทำการ push code ขึ้น Git
+---
+git add .
+git commit -m "first comit"
+https://github.com/iamsamitdev/jsgenius-git remote add origin https://github.com/iamsamitdev/jsgenius-snippet.git
+git branch -M main
+git push -u origin main
+
+10. Publishing Extensions
+---
+npm install -g vsce
+
+11. สร้าง Access Token
+---
+av33nxg5p7kaxsanusfxez4j2eli2y75yugokgbyp5bm2rishr3a
+
+12. Login เพื่อทำการ publish
+---
+vsce login <publisher name>
+
+13. Publish an extension
+---
+vsce publish
+
+14. Wating for Verify
+---
+
+15. กรณีต้องการอัพเดทเวอร์ชั่น
+---
+vsce publish minor
